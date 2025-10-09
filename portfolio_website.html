@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalilah Heyward - Full-Stack Software Engineer | Majesty Web Design</title>
+    <meta name="description" content="Professional web development services by Dalilah Heyward. Specializing in custom websites, web applications, and digital solutions. Transform your ideas into majestic web experiences.">
+    <meta name="keywords" content="web developer, software engineer, web design, custom websites, web applications, Dalilah Heyward">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap');
+        :root {
+            --main: rgba(70,30,90);
+            --text: rgba(255, 175, 55);
+            --secondary: rgba(100,25,130);
+            --black: rgba(0,0,0);
+            --white: rgba(255,255,255);
+            --hover: rgba(83, 1, 143, 0.673);
+            --active: rgb(232, 146, 160);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "texturina", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            margin: 5%;
+        }
+
+        /* Header/Nav */
+        header {
+            background-color: var(--main);
+            color: var(--text);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-radius: 300px;
+            width: 65%;
+            margin: 2% auto;
+            transition: width 0.4s ease, border-radius 0.4s ease, margin 0.4s ease;
+        }
+        header.scrolled {
+            width: 100%;
+            left: 0;
+            transform: none;
+            border-radius: 0;
+            margin-top: 0;
+            top: 0;
+        }
+        #nav {
+            display: flex;
+            height: 5rem;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links li a:hover {
+            color: var(--active);
+        }
+        .cta-button {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .cta-button:hover {
+            background-color: var(--hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--main), var(--secondary));
+            color: var(--white);
+            padding: 150px 2rem 80px;
+            text-align: center;
+            margin-top: 20%;
+            border-radius: 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero span {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text)
+        }
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-buttons a {
+            padding: 15px 30px;
+            background-color: var(--text);
+            color: var(--main);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .hero-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--main);
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .service-card h3 {
+            color: var(--main);
+            margin-bottom: 1rem;
+        }
+
+        /* Process */
+        .process {
+            padding: 80px 0;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            align-items: center;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--main);
+            color: var(--text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .step h3 {
+            color: var(--main);
+            margin-bottom: 0.5rem;
+        }
+        .step p {
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        .step-payment {
+            background: var(--text);
+            color: var(--main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* About */
+        .about {
+            padding: 80px 0;
+            background: var(--white);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        .about .container {
+            text-align: center;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: block;
+            object-fit: cover;
+            border: 5px solid var(--main);
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .about > span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--main);
+            margin: 2rem 0 1rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skill-tag {
+            background: var(--main);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 80px 0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .portfolio-image {
+            background: linear-gradient(135deg, var(--main), var(--secondary));
+            color: var(--text);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .portfolio-content {
+            padding: 2rem;
+        }
+        .portfolio-content h3 {
+            color: var(--main);
+            margin-bottom: 1rem;
+        }
+        .portfolio-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .portfolio-tag {
+            background: var(--text);
+            color: var(--main);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: var(--white);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-form h3 {
+            color: var(--main);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--main);
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--main);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .contact-icon {
+            color: var(--text);
+            font-size: 2rem;
+            min-width: 40px;
+        }
+        .contact-item h4 {
+            color: var(--main);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--main);
+            color: var(--text);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+        .social-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .socials .icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .socials .icons li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .socials .icons li a::before {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+            font-weight: 900;
+        }
+        .socials .icons li a:hover {
+            color: var(--active);
+            transform: translateY(-3px);
+        }
+        footer p {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                width: 90%;
+                margin-top: 5%;
+                border-radius: 50px;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--main);
+                flex-direction: column;
+                padding: 2rem;
+                border-radius: 0 0 20px 20px;
+                margin-top: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .cta-button {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero span {
+                font-size: 1.2rem;
+            }
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <span class='logo'>Majesty Web Design</span>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About Me</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get In Contact</a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Majesty Web Design</h1>
+        <span>Where Vision Meets Digital Excellence</span>
+        <p>We craft majestic web experiences that elevate your brand and captivate your audience. From stunning custom designs to powerful web applications, we transform your ideas into digital masterpieces that drive results.</p>
+        <div class="hero-buttons">
+            <a href="#portfolio">View Our Work</a>
+            <a href="#contact">Start Your Project</a>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Custom Web Design</h3>
+                    <p>Beautiful, responsive websites tailored to your brand and vision. From concept to launch, we create designs that captivate and convert.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h3>Web Applications</h3>
+                    <p>Full-stack web applications with modern frameworks. Interactive, scalable, and built for performance and user experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Complete online stores with secure payment processing, inventory management, and seamless shopping experiences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-toolbox"></i></div>
+                    <h3>Website Maintenance</h3>
+                    <p>Ongoing support, updates, and optimization to keep your website secure, fast, and performing at its best.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Mobile Optimization</h3>
+                    <p>Ensures your website works perfectly on all devices with responsive design and mobile-first approach.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-searchengin"></i></div>
+                    <h3>SEO & Performance</h3>
+                    <p>Optimizes your site for search engines and lightning-fast loading times to maximize your online visibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">Our Development Process</h2>
+            <div class="process-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Planning</h3>
+                    <p>We'll define your requirements, create wireframes, and plan the entire project structure.</p>
+                    <div class="step-payment">25% Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Prototyping</h3>
+                    <p>I'll create beautiful mockups and interactive prototypes that bring your vision to life.</p>
+                    <div class="step-payment">25% Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Development & Build</h3>
+                    <p>Your website comes to life with clean, efficient code and all the functionality you need.</p>
+                    <div class="step-payment">25% Payment</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Testing & Launch</h3>
+                    <p>Thorough testing, optimization, and a smooth launch with ongoing support included.</p>
+                    <div class="step-payment">25% Payment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>I am at my happiest when I create and succeed, seeing the fruits of my labor in their final form. Whether I've finished a crochet piece, art project, or a complex web application, there's immense value I find in beautiful creation.</p>
+
+            <span>Technical Skills</span>
+            <div class="skills-list">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Design Templates</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">Browse our curated design templates. Each can be fully customized and developed into your unique web project.</p>
+            <div class="portfolio-grid">
+                <a href="#" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-image">E-commerce Template</div>
+                    <div class="portfolio-content">
+                        <h3>Modern E-commerce Store</h3>
+                        <p>Full-featured online store template with product pages, shopping cart, and checkout flow. We'll customize and build it to match your brand perfectly.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Framer</span>
+                            <span class="portfolio-tag">Responsive</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-image">Business Template</div>
+                    <div class="portfolio-content">
+                        <h3>Professional Services Website</h3>
+                        <p>Clean, modern template for consulting firms featuring service pages, testimonials, and contact forms. Perfect foundation for your professional site.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Figma</span>
+                            <span class="portfolio-tag">Professional</span>
+                            <span class="portfolio-tag">Customizable</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-image">SaaS Template</div>
+                    <div class="portfolio-content">
+                        <h3>SaaS Landing Page</h3>
+                        <p>High-converting SaaS template with pricing tables, feature sections, and call-to-actions. We'll develop it with all the functionality you need.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Framer</span>
+                            <span class="portfolio-tag">Landing Page</span>
+                            <span class="portfolio-tag">Animated</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Create Something Majestic</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Get Your Free Quote</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <input type="text" id="project" name="project" placeholder="e.g., Custom Website, E-commerce Store">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <input type="text" id="budget" name="budget" placeholder="e.g., $2,000 - $5,000">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project goals, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@majestywebmagic.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-comments"></i></div>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-business-time"></i></div>
+                        <div>
+                            <h4>Project Timeline</h4>
+                            <p>2-8 weeks depending on scope</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-credit-card"></i></div>
+                        <div>
+                            <h4>Payment Plans</h4>
+                            <p>25% installments throughout project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 class="social-title">You can Find Me Here:</h3>
+        <div class="socials">
+            <ul class="icons">
+                <li><a class="fa-brands fa-twitter" href="https://x.com/majesty_web?s=21"></a></li>
+                <li><a class="fa-brands fa-instagram" href="https://www.instagram.com/hey_thxre_dalilah/"></a></li>
+                <li><a class="fa-brands fa-github" href="https://github.com/MajesticL"></a></li>
+                <li><a class="fa-solid fa-cloud-arrow-up" href="https://bsky.app/profile/majestyl.bsky.social"></a></li>
+                <li><a class="fa-solid fa-inbox" href="mailto:contact@majestywebmagic.com"></a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 Majesty Web Design LLC | Dalilah Heyward | Crafting Digital Excellence</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector("header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.getElementById('hamburger');
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you within 24 hours.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
