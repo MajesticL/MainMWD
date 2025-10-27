@@ -31,9 +31,9 @@
         body {
             font-family: "texturina", Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: var(--black);
+            /* color: var(--black);
             background-color: var(--white);
-            margin: 5%;
+            margin: 5%; */
         }
 
         /* Header/Nav */
@@ -77,6 +77,10 @@
         .logo img {
             display: none;
         }
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -88,7 +92,7 @@
             font-weight: 500;
             transition: color 0.3s ease;
         }
-        .nav-links li a:hover {
+        .nav-links li a:hover, .logo:hover {
             color: var(--active);
         }
         .cta-button {
@@ -559,8 +563,10 @@
     <header>
         <nav id="nav">
             <div class="logo">
+                <a href="https://www.majestywebmagic.com/">
                 <span>Majesty Web Design</span>
                 <img src="images/MWDLogo.png" alt="">
+                </a>
             </div>
             
             <ul class="nav-links" id="navLinks">
@@ -594,17 +600,17 @@
             <h2 class="section-title">What We Do</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="service-icon"><i class="fa-brands fa-figma"></i></div>
                     <h3>Custom Web Design</h3>
                     <p>Beautiful, responsive websites tailored to your brand and vision. From concept to launch, we create designs that captivate and convert.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-file-import"></i></div>
                     <h3>Web Applications</h3>
                     <p>Full-stack web applications with modern frameworks. Interactive, scalable, and built for performance and user experience.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-cash-register"></i></div>
                     <h3>E-commerce Solutions</h3>
                     <p>Complete online stores with secure payment processing, inventory management, and seamless shopping experiences.</p>
                 </div>
