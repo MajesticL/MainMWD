@@ -69,10 +69,15 @@
             max-width: 1400px;
             margin: 0 auto;
         }
+        .logo {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
         .logo span {
             display: flex;
             font-size: 1.5rem;
             font-weight: bold;
+            white-space: nowrap;
         }
         .logo img {
             display: none;
@@ -143,14 +148,13 @@
         .hero {
             background-image: url(images/frame.jpg);
             background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
+            background-size: cover;
+            background-position: center;
             color: var(--white);
             padding: 150px 2rem 80px;
             text-align: center;
             margin-top: 20%;
-            border-radius: 20px;
+            
         }
         .hero h1 {
             font-size: 3rem;
@@ -510,11 +514,13 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header {
-                width: 70%;
-                margin-top: 5%;
+            
+             header {
+                width: 90%;
                 border-radius: 50px;
+                margin: 4% auto;
             }
+
             .logo span {
                 display: none;
             }
