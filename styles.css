@@ -362,6 +362,12 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
+
+        .portfolio-image.portfolio-1 {
+            background-image: url('images/todo.png');
+            background-size: cover;
+            background-position: center;
+        }
         .portfolio-content {
             padding: 2rem;
         }
