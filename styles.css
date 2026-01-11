@@ -45,7 +45,7 @@
             border-radius: 0;
             margin-top: 0;
             top: 0;
-        
+            white-space: nowrap;
         }
         #nav {
             display: flex;
@@ -373,7 +373,20 @@
 
         .portfolio-image.portfolio-1 {
             background-image: url('images/todo.png');
-            background-size: cover;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .portfolio-image.portfolio-2 {
+            background-image: url('images/paws.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .portfolio-image.portfolio-3 {
+            background-image: url('images/bakery.png');
+            background-repeat: no-repeat;
+            background-size: contain;
             background-position: center;
         }
         .portfolio-content {
@@ -565,11 +578,9 @@
             .hero span {
                 font-size: 1.2rem;
             }
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
             .process-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+                gap: 1rem;
             }
             .send {
                 display: block;
