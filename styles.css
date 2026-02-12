@@ -372,19 +372,19 @@
         }
 
         .portfolio-image.portfolio-1 {
-            background-image: url('images/todo.png');
+            background-image: url('/images/todo.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
         }
         .portfolio-image.portfolio-2 {
-            background-image: url('images/paws.png');
+            background-image: url('/images/paws.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
         }
         .portfolio-image.portfolio-3 {
-            background-image: url('images/bakery.png');
+            background-image: url('/images/bakery.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
