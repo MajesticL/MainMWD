@@ -1,6 +1,7 @@
 import 'vite/modulepreload-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App'
 
 window.toggleMenu = function() {
     console.log('toggleMenu called');
@@ -24,6 +25,9 @@ window.handleSubmit = function(event) {
 }
 
 
+
+
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePageFeatures);
 } else {
@@ -35,7 +39,7 @@ function initializePageFeatures() {
     if (reactAppElement) {
         const root = ReactDOM.createRoot(reactAppElement);
         root.render(
-            <h1>Hello from React!</h1>
+            <App/>
         );
     }
 
