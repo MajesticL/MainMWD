@@ -17,16 +17,18 @@ function Navbar() {
                         <img src="/images/resizedLogo.png" alt="Majesty Web Design LLC Logo" />
                     </a>
                 </div>
+                <div className='link-column'>
+
+                    <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Me</a></li>
+                    </ul>
                 
-                <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About Me</a></li>
-                </ul>
+                    <a href="#contact" className="cta-button">Get In Contact</a>
+                </div>
                 
-                <a href="#contact" className="cta-button">Get In Contact</a>
                 
                 <button 
                     className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
