@@ -3,8 +3,8 @@ import '../styles/Hero.css'
 
 function Hero() {
     return (
-        <div>
-            <section id="home" className="hero">
+        <div className="hero">
+            <section id="home">
                 <h1>We craft majestic web experiences</h1>
                 <span>Where Vision Meets Digital Excellence</span>
                 <p>Exceptional design is within reach. We create custom websites that bring your brand's unique story to life and drive meaningful business growth.</p>
