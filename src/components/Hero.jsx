@@ -13,8 +13,8 @@ function Hero() {
                         <a href="#portfolio">View Our Work</a>
                         <a href="#contact">Start Your Project</a>
                     </div>
-                    <img src="/images/frame.jpg" alt="Hands holding a crown" />
                 </div>
+                <img src="/images/frame.jpg" alt="Hands holding a crown" />
             </section>
         </div>
     );
