@@ -19,3 +19,9 @@
             color: var(--black);
             background-color: var(--white);
         }
+
+        .container {
+            width: 75%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
