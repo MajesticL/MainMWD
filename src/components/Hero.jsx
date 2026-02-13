@@ -13,6 +13,7 @@ function Hero() {
                     <a href="#contact">Start Your Project</a>
                 </div>
             </section>
+            <img src="/images/frame.jpg" alt="" />
         </div>
     );
 }
