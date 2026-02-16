@@ -11,10 +11,10 @@ function Hero() {
                     <p>Exceptional design is within reach. We create custom websites that bring your brand's unique story to life and drive meaningful business growth.</p>
                     <div className="hero-buttons">
                         <a href="#portfolio">View Our Work</a>
-                        <a href="#contact">Start Your Project</a>
+                        <a href="#contact" className="light-btn">Start Your Project</a>
                     </div>
                 </div>
-                <img src="/images/frame.jpg" alt="Hands holding a crown" />
+                {/* <img src="/images/frame.jpg" alt="Hands holding a crown" /> */}
             </section>
         </div>
     );
