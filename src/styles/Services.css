@@ -1,0 +1,72 @@
+@import url("Global.css");
+
+.services-section {
+    padding: 80px 0;
+    background-color: var(--section);
+    color: var(--secondary);
+    text-align: center;
+}
+
+.services-container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-subtitle {
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+    opacity: 0.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    width: 100%; 
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.service-icon {
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.service-card p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        width: 90%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; 
+    }
+}

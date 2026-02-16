@@ -1,1 +1,20 @@
 @import url("Global.css");
+
+.projects-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 75%; /* Matches your navbar/hero content width */
+    margin: 0 auto;
+}
+
+.projects-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
