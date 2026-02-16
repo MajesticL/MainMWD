@@ -22,8 +22,8 @@ function Navbar() {
                     <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#about">About Me</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
                     </ul>
                 
                     <a href="#contact" className="cta-button">Get In Contact</a>
