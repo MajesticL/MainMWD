@@ -43,7 +43,7 @@
     transform: translateX(10px);
 }
 
-.info-item i {
+.info-item .icon {
     font-size: 1.5rem;
     color: var(--text);
     width: 40px;

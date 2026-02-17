@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaEnvelope } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import '../styles/Contact.css';
 
 function Contact() {
@@ -41,7 +43,7 @@ function Contact() {
                     <p>I'm currently available for freelance work. If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
 
                     <div className="info-item">
-                        <i className="fa-solid fa-envelope"></i>
+                        <FaEnvelope className='icon' />
                         <div>
                             <h4>Email</h4>
                             <a href="mailto:contact@majestywebmagic.com">contact@majestywebmagic.com</a>
@@ -49,7 +51,7 @@ function Contact() {
                     </div>
 
                     <div className="info-item">
-                        <i className="fa-solid fa-location-dot"></i>
+                        <FaLocationDot className='icon'/>
                         <div>
                             <h4>Location</h4>
                             <p>South Carolina, USA</p>
