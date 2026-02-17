@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react"; 
+import Navbar from './components/Navbar'
 const About = lazy(() => import("./components/About")); 
 const Projects = lazy(() => import("./components/Projects")); 
 const Services = lazy(() => import("./components/Contact"));
