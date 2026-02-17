@@ -57,8 +57,9 @@
 
 .project-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: auto;
+    text-align: center;
 }
 
 .project-btn {
@@ -76,3 +77,5 @@
 .project-btn:hover {
     background-color: var(--hover);
 }
+
+

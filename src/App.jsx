@@ -2,9 +2,9 @@ import { lazy, Suspense } from "react";
 import Navbar from './components/Navbar'
 const About = lazy(() => import("./components/About")); 
 const Projects = lazy(() => import("./components/Projects")); 
-const Services = lazy(() => import("./components/Contact"));
+const Services = lazy(() => import("./components/Services"));
 const Contact = lazy(() => import("./components/Contact"));
-const Footer = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 
 function App() {

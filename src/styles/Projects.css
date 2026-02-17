@@ -9,8 +9,8 @@
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 75%;
+    gap: 3rem;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -21,9 +21,10 @@
 
 @media (max-width: 768px) {
     .projects-container {
-        width: 110%;
+        width: 100%;
     }
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: 1fr; 
     }
 }
+
