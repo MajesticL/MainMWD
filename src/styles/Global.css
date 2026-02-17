@@ -7,6 +7,8 @@
             --hover: rgba(83, 1, 143, 0.673);
             --active: rgb(232, 146, 160);
             --section: rgb(239, 217, 252);
+            --darker: rgb(51, 2, 76);
+            --bla: #111;
         }
         * {
             box-sizing: border-box;

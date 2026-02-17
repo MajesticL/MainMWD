@@ -3,13 +3,14 @@
 .projects-section {
     padding: 4rem 0;
     text-align: center;
+     background-image: linear-gradient(to top right, var(--section), var(--secondary));
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    width: 75%; /* Matches your navbar/hero content width */
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -18,3 +19,11 @@
     font-size: 2.5rem;
 }
 
+@media (max-width: 768px) {
+    .projects-container {
+        width: 110%;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}

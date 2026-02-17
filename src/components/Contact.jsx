@@ -8,18 +8,25 @@ function Contact() {
 
     const sendEmail = (e) => {
         e.preventDefault();
+
+        const honeypot = document.getElementById('website');
+        if (honeypot.value) {
+        console.log("Bot detected. Email blocked.");
+        setStatus('SUCCESS'); 
+        e.target.reset();
+        return;
+    }
         setStatus('SENDING');
 
-        // REPLACE WITH YOUR ACTUAL IDs
-        const serviceID = 'YOUR_SERVICE_ID';
-        const templateID = 'YOUR_TEMPLATE_ID';
-        const publicKey = 'YOUR_PUBLIC_KEY';
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
         emailjs.sendForm(serviceID, templateID, form.current, publicKey)
             .then((result) => {
                 console.log(result.text);
                 setStatus('SUCCESS');
-                e.target.reset(); // Clears the form
+                e.target.reset();
             }, (error) => {
                 console.log(error.text);
                 setStatus('FAILED');
@@ -29,8 +36,6 @@ function Contact() {
     return (
         <section id="contact" className="contact-section">
             <div className="contact-container">
-                
-                {/* --- LEFT COLUMN: INFO --- */}
                 <div className="contact-info">
                     <h2>Get In Touch</h2>
                     <p>I'm currently available for freelance work. If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
@@ -50,18 +55,21 @@ function Contact() {
                             <p>South Carolina, USA</p>
                         </div>
                     </div>
-                    
-                    {/* Socials */}
-                    <div className="social-links">
-                        <a href="https://github.com/MajesticL" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></a>
-                        <a href="https://www.instagram.com/hey_thxre_dalilah/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
-                        <a href="https://x.com/majesty_web?s=21" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
-                    </div>
                 </div>
 
-                {/* --- RIGHT COLUMN: FORM --- */}
                 <div className="contact-form-wrapper">
                     <form ref={form} onSubmit={sendEmail} className="contact-form">
+
+                        <input 
+                            type="text" 
+                            name="website" 
+                            id="website" 
+                            style={{ display: 'none' }} 
+                            tabIndex={-1} 
+                            autoComplete="off"
+                        />
+
+
                         
                         <div className="form-group">
                             <label>Name</label>
@@ -73,11 +81,10 @@ function Contact() {
                             <input type="email" name="from_email" placeholder="your@email.com" required />
                         </div>
 
-                        {/* SUBJECT DROPDOWN */}
                         <div className="form-group">
                             <label>Subject</label>
-                            <select name="subject" required>
-                                <option value="" disabled selected>Select a subject</option>
+                            <select name="subject" defaultValue="" required>
+                                <option value="" disabled>Select a subject</option>
                                 <option value="General Inquiry">General Inquiry</option>
                                 <option value="Project Quote">Project Quote</option>
                                 <option value="Coffee Chat">Coffee Chat</option>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ProjectCard.css'; // Import the specific styles
+import '../styles/ProjectCard.css';
 
 function ProjectCard(props) {
     return (
@@ -12,7 +12,10 @@ function ProjectCard(props) {
                 <p>{props.description}</p>
                 <div className="project-links">
                     <a href={props.link} target="_blank" rel="noopener noreferrer" className="project-btn">
-                        View Project
+                        View Site
+                    </a>
+                    <a href={props.github} target="_blank" rel="noopener noreferrer" className="project-btn">
+                        View Github
                     </a>
                 </div>
             </div>

@@ -11,10 +11,10 @@ function About() {
                         <img src="/images/me.png" alt="Profile" />
                     </div>
                     <div className="about-text">
-                        <h3>Hi, I'm Dalilah</h3>
+                        <h3>Hello!, I'm Dalilah</h3>
                         <p>
-                            I am a passionate web developer dedicated to turning ideas into reality. 
-                            With a keen eye for design and a love for clean code, I help businesses mark their terriroty in this expansive digital landscape.
+                            I am a passionate web developer dedicated to turning your ideas into reality. 
+                            I craft custom websites for creative spirits and bold brands. I love color, typography, and the challenge of translating a brand's vibe into a digital experience.
                         </p>
                         <p>
                             Whether you need a brand new website or a redesign of an existing one, 

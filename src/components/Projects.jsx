@@ -27,7 +27,7 @@ function Projects() {
             description: "Cute dog groomer template with a services, gallery,and testimonial section. Perfect foundation for your fuzzy friends.",
             image: "../images/paws.png",
             link: "https://pawandbubble.netlify.app/",
-            github: ""
+            github: "https://github.com/MajesticL/dog-groomer"
         }
         // {
         //     id: 1,
@@ -40,8 +40,9 @@ function Projects() {
         
     ]
     return (
-        <section id="portfolio" className="projects-section">
-      <h2>My Recent Work</h2>
+      <section id="portfolio" className="projects-section">
+      <div className='projects-container'>
+        <h2>My Recent Work</h2>
       
       <div className="projects-grid">
         {projectList.map((project) => (
@@ -55,6 +56,8 @@ function Projects() {
           />
         ))}
       </div>
+      </div>
+      
     </section>
     );
 }
