@@ -17,4 +17,7 @@ export default defineConfig({
       input: '/index.html',
     },
   },
+  build: { 
+    minify: "esbuild" 
+  },
 })
