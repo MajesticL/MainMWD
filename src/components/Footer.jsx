@@ -1,23 +1,48 @@
 import React from 'react';
-import '../styles/Services.css';
+import '../styles/Footer.css'; // Make sure to create this file
 
 function Footer() {
     return (
-        <div>
-            <footer>
-                <h3 class="social-title">You can Find Me Here:</h3>
-                <div class="socials">
-                    <ul class="icons">
-                        <li><a class="fa-brands fa-twitter" href="https://x.com/majesty_web?s=21" aria-label="Twitter"></a></li>
-                        <li><a class="fa-brands fa-instagram" href="https://www.instagram.com/hey_thxre_dalilah/" aria-label="Instagram"></a></li>
-                        <li><a class="fa-brands fa-github" href="https://github.com/MajesticL" aria-label="Github"></a></li>
-                        <li><a class="fa-solid fa-cloud-arrow-up" href="https://bsky.app/profile/majestyl.bsky.social" aria-label="BlueSky"></a></li>
-                        <li><a class="fa-solid fa-inbox" href="mailto:contact@majestywebmagic.com" aria-label="Email"></a></li>
+        <footer className="footer-section">
+            <div className="footer-content">
+                <h3 className="social-title">You Can Find Me Here:</h3>
+                
+                <div className="social-icons-container">
+                    <ul className="social-icons-list">
+                        <li>
+                            <a href="https://x.com/majesty_web?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <i className="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/hey_thxre_dalilah/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i className="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MajesticL" target="_blank" rel="noopener noreferrer" aria-label="Github">
+                                <i className="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        {/* <li>
+                            <a href="https://bsky.app/profile/majestyl.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky">
+                                <i className="fa-brands fa-square-bluesky"></i>
+                            </a>
+                        </li> */}
+                        <li>
+                            <a href="mailto:contact@majestywebmagic.com" aria-label="Email">
+                                <i className="fa-solid fa-envelope"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <p>&copy; 2025 Majesty Web Design LLC | Dalilah Heyward | Crafting Digital Excellence</p>
-            </footer>
-        </div>
+
+                <div className="footer-bottom">
+                    <p>&copy; 2025 - 2026 Majesty Web Design LLC | Dalilah Heyward</p>
+                    <p className="tagline">Crafting Digital Excellence</p>
+                </div>
+            </div>
+        </footer>
     );
 }
 

@@ -1,1 +1,194 @@
-@import url("Global.css");
+/* src/styles/Contact.css */
+
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--background);
+    color: var(--main);
+}
+
+/* Main Flex Container */
+.contact-container {
+    width: 75%;
+    max-width: 1100px;
+    margin: 0 auto;
+    
+    /* Creates the side-by-side layout */
+    display: flex;
+    gap: 4rem; 
+}
+
+/* --- LEFT COLUMN STYLES --- */
+.contact-info {
+    flex: 1; /* Takes up half the space */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info > p {
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Info Cards (Email/Address) */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--text);
+    width: 40px;
+    text-align: center;
+}
+
+.info-item h4 {
+    margin: 0 0 5px 0;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.info-item a, 
+.info-item p {
+    margin: 0;
+    color: var(--main);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--main);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text);
+}
+
+/* --- RIGHT COLUMN STYLES --- */
+.contact-form-wrapper {
+    flex: 1; /* Takes up the other half */
+    background-color: var(--secondary);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+/* Unified Styling for Inputs, Textarea, and Select */
+.form-group input, 
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--background);
+    color: var(--main);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none; /* Removes default OS styling */
+    /* Custom Dropdown Arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.submit-btn {
+    padding: 12px 30px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; 
+}
+
+.submit-btn:hover {
+    background-color: var(--hover);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.success-msg { 
+    color: #4caf50; 
+    text-align: center; 
+    margin-top: 10px; 
+    font-weight: bold;
+}
+
+.error-msg { 
+    color: #f44336; 
+    text-align: center; 
+    margin-top: 10px; 
+    font-weight: bold;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack vertically */
+        width: 90%;
+        gap: 3rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+}

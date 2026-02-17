@@ -5,11 +5,14 @@
 .project-card {
     background-color: var(--section);
     border-radius: 15px;
-    overflow: hidden; /* Keeps the image inside the rounded corners */
+    overflow: hidden;
     box-shadow: 0 4px 6px var(--black);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column; /* Stacks image on top of text */
+    flex-direction: column;
+    
+    /* ADD THIS: Ensures cards stretch to fill the grid row height */
+    height: 100%; 
 }
 
 .project-card:hover {
@@ -18,9 +21,11 @@
 }
 
 .project-image-container {
-    height: 200px; /* Fixed height for uniformity */
+    height: 200px;
     overflow: hidden;
     background: linear-gradient(135deg, var(--main), var(--secondary));
+    /* Ensure image doesn't shrink if card grows */
+    flex-shrink: 0; 
 }
 
 .project-image-container img {
@@ -37,6 +42,11 @@
 .project-info {
     padding: 1.5rem;
     text-align: left;
+    
+    /* --- ADD THESE 3 LINES --- */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Fills remaining vertical space in the card */
 }
 
 .project-info h3 {
@@ -48,8 +58,14 @@
 .project-info p {
     font-size: 0.95rem;
     color: var(--main);
-    margin-bottom: 1.5rem;
     line-height: 1.5;
+    margin-bottom: 1.5rem; /* Space between text and button */
+}
+
+/* --- ADD THIS NEW BLOCK --- */
+/* This targets the div wrapping your button in ProjectCard.jsx */
+.project-links {
+    margin-top: auto; /* MAGIC: Pushes this element to the bottom */
 }
 
 .project-btn {

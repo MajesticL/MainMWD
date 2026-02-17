@@ -11,7 +11,7 @@ function Projects() {
             description: "Simple 1-page bakery template with a menu.",
             image: "../images/bakery.png",
             link: "https://goldencrumb.netlify.app/",
-            github: ""
+            github: "https://github.com/MajesticL/bakery"
         },
         {
             id: 2,
@@ -19,7 +19,7 @@ function Projects() {
             description: "Functional Todo List with a style toggle for dark and light mode. Keeps tasks as page is refreshed.",
             image: "../images/todo.png",
             link: "https://testingtodos.netlify.app/",
-            github: ""
+            github: "https://github.com/MajesticL/todo-list"
         },
         {
             id: 3,
@@ -51,6 +51,7 @@ function Projects() {
             description={project.description}
             image={project.image}
             link={project.link}
+            github={project.github}
           />
         ))}
       </div>

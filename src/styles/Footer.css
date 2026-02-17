@@ -1,1 +1,79 @@
 @import url("Global.css");
+
+
+.footer-section {
+    background-color: #111;
+    color: var(--text);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    width: 75%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.social-icons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icons-list li {
+    display: inline-block;
+}
+
+.social-icons-list a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    color: var(--text);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.social-icons-list a:hover {
+    background-color: var(--hover);
+    color: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom .tagline {
+    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
