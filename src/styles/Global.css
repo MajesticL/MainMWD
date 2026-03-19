@@ -11,6 +11,14 @@
   --bla: #111;
 } */
 
+:root {
+  --background: #160c29;
+  --primary-text: #e0aaff;
+  --prime-interact: #d4af37; /* links, buttons, borders */
+  --border: #7b1fa2; /* hover/sub-heders */
+  --hover: #c792ea;
+  --dark-secs: #4a148c;
+}
 * {
   box-sizing: border-box;
   margin: 0;
