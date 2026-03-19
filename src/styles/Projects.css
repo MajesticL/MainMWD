@@ -11,7 +11,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 30px;
   margin-top: 40px;
 }
@@ -23,6 +23,6 @@ h2 {
 }
 
 .projects-subtitle {
-  color: var(--highlight);
+  color: var(--hover);
   margin-bottom: 20px;
 }

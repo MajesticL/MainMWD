@@ -1,9 +1,7 @@
-@import url("Global.css");
-
 .services-section {
   background-color: var(--bg-dark);
   padding: 80px 20px;
-  color: var(--text-main);
+  color: var(--primary-text);
 }
 
 .services-container {
@@ -20,7 +18,7 @@
 
 .services-subtitle {
   font-size: 1.1rem;
-  color: var(--highlight);
+  color: var(--hover);
   margin-bottom: 50px;
 }
 
@@ -32,7 +30,7 @@
 
 .service-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--accent-purple);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 40px 30px;
   transition: all 0.3s ease;
@@ -42,15 +40,14 @@
 
 .service-card:hover {
   transform: translateY(-10px);
-  border-color: var(--accent-gold);
+  border-color: var(--prime-interact);
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .service-icon {
   margin-bottom: 20px;
-  color: var(--accent-gold);
+  color: var(--prime-interact);
   transition: transform 0.3s ease;
-
   font-size: 3rem;
 }
 
@@ -67,5 +64,5 @@
 .service-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #d1c4e9;
+  color: var(--primary-text);
 }

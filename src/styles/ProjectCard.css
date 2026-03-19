@@ -1,8 +1,6 @@
-@import url("Global.css");
-
 .project-card {
   background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--accent-purple);
+  border: 1px solid var(--border);
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -13,7 +11,7 @@
 
 .project-card:hover {
   transform: translateY(-10px);
-  border-color: var(--accent-gold);
+  border-color: var(--prime-interact);
   box-shadow:
     0 15px 30px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(212, 175, 55, 0.15);
@@ -21,8 +19,7 @@
 
 .project-image-container {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -53,7 +50,7 @@
 
 .project-info p {
   font-size: 0.95rem;
-  color: #d1c4e9;
+  color: var(--primary-text);
   line-height: 1.5;
   margin-bottom: 15px;
   flex-grow: 1;
@@ -67,19 +64,26 @@
 }
 
 .tech-badge {
-  background-color: rgba(123, 31, 162, 0.3);
-  color: var(--highlight);
+  background-color: var(--dark-secs);
+  color: var(--hover);
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  border: 1px solid rgba(123, 31, 162, 0.5);
+  border: 1px solid var(--border);
 }
 
 .project-links {
   display: flex;
   gap: 10px;
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  .project-links {
+    flex-direction: row;
+  }
 }
 
 .project-btn {
@@ -93,28 +97,33 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .project-btn {
+    width: auto;
+  }
 }
 
 .primary-btn {
   background-color: transparent;
-  color: var(--accent-gold);
-  border: 2px solid var(--accent-gold);
-  flex: 1;
+  color: var(--prime-interact);
+  border: 2px solid var(--prime-interact);
 }
 
 .primary-btn:hover {
-  background-color: var(--accent-gold);
-  color: #000;
+  background-color: var(--prime-interact);
+  color: var(--bg-dark);
 }
 
 .secondary-btn {
   background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  flex: 1;
 }
 
 .secondary-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--highlight);
+  border-color: var(--hover);
 }
