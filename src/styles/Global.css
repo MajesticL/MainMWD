@@ -12,7 +12,7 @@
 } */
 
 :root {
-  --background: #160c29;
+  --bg-dark: #160c29;
   --primary-text: #e0aaff;
   --prime-interact: #d4af37; /* links, buttons, borders */
   --border: #7b1fa2; /* hover/sub-heders */
@@ -27,12 +27,28 @@
 body {
   font-family: "texturina", Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: var(--black);
-  background-color: var(--white);
+  color: var(--primary-text);
+  background-color: var(--bg-dark);
+  overflow-x: hidden;
 }
 
 .container {
   width: 75%;
   margin: 0 auto;
   max-width: 1200px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-fade-in {
+  animation: fadeIn 1s ease-out forwards;
 }
