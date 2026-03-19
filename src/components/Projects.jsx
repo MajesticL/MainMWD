@@ -57,7 +57,7 @@ function Projects() {
               image={project.image}
               link={project.link}
               github={project.github}
-              techStack={project.techStack} // Pass the stack!
+              techStack={project.techStack}
             />
           ))}
         </div>
