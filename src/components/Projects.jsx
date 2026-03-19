@@ -2,9 +2,9 @@ import React from "react";
 import ProjectCard from "./ProjectCard";
 import "../styles/Projects.css";
 
-import bakeryImg from "../images/bakery.avif";
-import todoImg from "../images/todo.avif";
-import pawsImg from "../images/paws.avif";
+import bakeryImg from "/images/bakery.avif";
+import todoImg from "/images/todo.avif";
+import pawsImg from "/images/paws.avif";
 
 function Projects() {
   const projectList = [
